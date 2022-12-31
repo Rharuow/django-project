@@ -7,6 +7,11 @@
   <title>Recipes</title>
 </head>
 <body>
-  <h1>Recipes {{name}}</h1>
+  <h1>Recipes</h1>
+  {% for recipe in recipes %}
+    <p>{{recipe.title}}</p>
+    <p>{{recipe.category.name}}</p>
+    <a href="{% url 'recipes:category' recipe.category.id %}">{{recipe.category.name}}</a>
+  {% endfor %}
 </body>
 </html>
